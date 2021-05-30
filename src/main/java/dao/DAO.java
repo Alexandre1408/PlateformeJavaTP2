@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
  * @author sean anica, juliette rondeau, alhabaj mahmod
  * @version 1.0
  */
-public class DAO {
+public class Dao {
     
     //Attributs
     private EntityManager em;
@@ -18,7 +18,7 @@ public class DAO {
     /**
      * constructeur qui génère l'entity manager
      */
-    public DAO() 
+    public Dao() 
     {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jsfproject");
         this.setEm(entityManagerFactory.createEntityManager());

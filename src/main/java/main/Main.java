@@ -1,12 +1,13 @@
 package main;
 
-import dao.DAO;
+import dao.Dao;
 
 public class Main {
 
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
-		DAO myDao = new DAO();
+		// TODO Auto-generated method stub
+		Dao MyDao = new Dao();
 	}
 
 }

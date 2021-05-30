@@ -5,8 +5,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-@Entity(name="Member")
-public class Member
+@Entity(name="Membre")
+public class Membre
 {
 	//Attributs de la classe
 	@Id
@@ -22,12 +22,12 @@ public class Member
 	private String mail;
 	
 		
-	public Member()
+	public Membre()
 	{
 		
 	}
 	
-	public Member(String nom,String prenom,String motDePasse,String mail)
+	public Membre(String nom,String prenom,String motDePasse,String mail)
 	{
 		this.nom = nom;
 		this.prenom = prenom;

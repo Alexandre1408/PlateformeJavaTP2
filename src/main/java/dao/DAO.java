@@ -40,7 +40,4 @@ public class DAO {
     public void setEm(EntityManager em) {
         this.em = em;
     }
-
-    
-
 }

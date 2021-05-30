@@ -15,16 +15,24 @@ public class Commentaire
 	private int idCommentaire;
 	private String text;
 	private LocalDateTime date;
+	private int nombreJaime;
 	
 	public Commentaire()
 	{
 		
 	}
 	
+	
 	public Commentaire(String text, LocalDateTime date)
 	{
 		this.text = text;
 		this.date = date;
+		nombreJaime = 0;
+	} 
+	
+	public void augmenterJaime()
+	{
+		nombreJaime++;
 	}
 	
 	public int getIdCommentaire() {
@@ -43,6 +51,15 @@ public class Commentaire
 	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+
+	public int getNombreJaime() {
+		return nombreJaime;
+	}
+
+	public void setNombreJaime(int nombreJaime) {
+		this.nombreJaime = nombreJaime;
+	}
+	
 	
 	
 }

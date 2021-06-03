@@ -2,6 +2,7 @@ package orm;
 
 import java.util.List;
 
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
@@ -12,11 +13,12 @@ public class CommentaireOrm  extends MainOrm
 	
 	public CommentaireOrm()
 	{
-		
+		super();
 	}
 
 	public void ajouterCommentaire(Commentaire commentaireAjouter) 
 	{
+		System.out.println(commentaireAjouter.getText());
 		try
 		{
 			em.getTransaction().begin();
@@ -77,4 +79,22 @@ public class CommentaireOrm  extends MainOrm
 		}
 		return resultList;
 	}
+	
+	@SuppressWarnings("unchecked")
+    public List<Commentaire> trouverTousCommentaireLimiter(int limit) 
+    {
+        String selectJPQL = "SELECT c FROM Commentaire c ORDER BY c.date DESC";
+        List<Commentaire> resultList = null;
+        Query query = em.createQuery(selectJPQL);
+        
+        try
+        {
+            resultList = (List<Commentaire>)query.setMaxResults(limit).getResultList();
+        }
+        catch(PersistenceException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return resultList;
+    }
 }

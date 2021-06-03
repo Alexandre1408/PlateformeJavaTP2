@@ -19,6 +19,6 @@
 	</servlet-mapping>
 	
 	<welcome-file-list>
-	  <welcome-file>faces/inscription.xhtml</welcome-file>
+	  <welcome-file>faces/commentaires.xhtml</welcome-file>
 	</welcome-file-list>
 </web-app>

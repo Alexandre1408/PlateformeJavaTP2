@@ -77,4 +77,22 @@ public class CommentaireOrm  extends MainOrm
 		}
 		return resultList;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Commentaire> trouverTousCommentaireLimiter() 
+	{
+		String selectJPQL = "SELECT c FROM Commentaire c";
+		List<Commentaire> resultList = null;
+		Query query = em.createQuery(selectJPQL);
+		
+		try
+		{
+			resultList = (List<Commentaire>)query.getResultList();
+		}
+		catch(PersistenceException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return resultList;
+	}
 }

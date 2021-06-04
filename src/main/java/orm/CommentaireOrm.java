@@ -81,7 +81,7 @@ public class CommentaireOrm  extends MainOrm
 	}
 	
 	@SuppressWarnings("unchecked")
-    public List<Commentaire> trouverTousCommentaireLimiter(int limit) 
+    public List<Commentaire> trouverTousCommentaire() 
     {
         String selectJPQL = "SELECT c FROM Commentaire c ORDER BY c.date DESC";
         List<Commentaire> resultList = null;
@@ -89,7 +89,7 @@ public class CommentaireOrm  extends MainOrm
         
         try
         {
-            resultList = (List<Commentaire>)query.setMaxResults(limit).getResultList();
+            resultList = (List<Commentaire>)query.getResultList();
         }
         catch(PersistenceException e)
         {

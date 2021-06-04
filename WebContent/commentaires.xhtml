@@ -11,6 +11,7 @@
     </h:head>
     <h:body>
     	<h1>Commentaires</h1>
+    	<h2>Top commentaires</h2>
     	<ul>
 		    <ui:repeat value="#{commentairesBean.topComments}" var="comment">
 		        <li>
@@ -24,6 +25,7 @@
 		    </ui:repeat>
 		</ul>
     	<hr/>
+    	<h2>Derniers commentaires</h2>
     	<ul>
 		    <ui:repeat value="#{commentairesBean.comments}" var="comment">
 		        <li>
@@ -37,8 +39,13 @@
 		    </ui:repeat>
 		</ul>
     	<h:form>
-    	   <h:inputText value="#{commentairesBean.tempText}" /><br/>
-    	   <h:commandButton value="Publier commentaire" action="#{commentairesBean.addComment}" />
+    		<h:commandButton value="prev -" action="#{commentairesBean.previousPage}" styleClass="commentchangepage commentpagebundle"/>
+    		<h:outputText value="#{commentairesBean.curPag}" styleClass="commentpage"/>
+    		<h:commandButton value="- next" action="#{commentairesBean.nextPage}" styleClass="commentchangepage"/>
+    	</h:form>
+    	<h:form>
+    	   <h:inputText value="#{commentairesBean.tempText}" styleClass="commentinput"/><br/>
+    	   <h:commandButton value="Publier commentaire" action="#{commentairesBean.addComment}" styleClass="commentsubmit" />
     	</h:form>
     </h:body>
 </html>

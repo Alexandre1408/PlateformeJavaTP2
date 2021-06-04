@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+    	<f:facet name="last">
+                <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/commentStyle.css" />
+         </f:facet>
+        <title>Premier exemple JSF 2.0</title>
+    </h:head>
+    <h:body>
+    
+    	<h1>Espace Commentaires</h1>
+    	    	
+    	<h2>Top commentaires</h2>
+    	
+    	<ul>
+		    <ui:repeat value="#{commentairesBean.topComments}" var="comment">
+		        <li>
+		            <h:outputText value="#{comment.text}" styleClass="commenttext"/>
+    				<h:form>
+		            	<h:outputText value="#{comment.showDate}" styleClass="commenttime"/>
+		            	<h:commandButton value="J'aime" action="#{commentairesBean.likeComment(comment.idCommentaire)}" styleClass="commentbutton"/>
+		        		<h:outputText value="#{comment.nombreJaime}" styleClass="commentlikes"/>
+		            </h:form>
+		        </li>
+		    </ui:repeat>
+		</ul>
+    	<hr/>
+    	<h2>Commentaires les plus récents </h2>
+    	<ul>
+		    <ui:repeat value="#{commentairesBean.comments}" var="comment">
+		        <li>
+		            <h:outputText value="#{comment.text}" styleClass="commenttext"/>
+    				<h:form>
+		            	<h:outputText value="#{comment.showDate}" styleClass="commenttime"/>
+		            	<h:commandButton value="J'aime" action="#{commentairesBean.likeComment(comment.idCommentaire)}" styleClass="commentbutton"/>
+		        		<h:outputText value="#{comment.nombreJaime}" styleClass="commentlikes"/>
+		            </h:form>
+		        </li>
+		    </ui:repeat>
+		</ul>
+    	<h:form>
+    		<h:commandButton value="prev -" action="#{commentairesBean.previousPage}" styleClass="commentchangepage commentpagebundle"/>
+    		<h:outputText value="#{commentairesBean.curPag}" styleClass="commentpage"/>
+    		<h:commandButton value="- next" action="#{commentairesBean.nextPage}" styleClass="commentchangepage"/>
+    	</h:form>
+    	<h:form>
+    	   <h:inputText value="#{commentairesBean.tempText}" styleClass="commentinput"/><br/>
+    	   <h:commandButton value="Publier commentaire" action="#{commentairesBean.addComment}" styleClass="commentsubmit" />
+    	</h:form>
+    </h:body>
+</html>

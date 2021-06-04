@@ -1,21 +1,19 @@
 package main;
 
-import java.util.List;
-
-import entities.Commentaire;
-import entities.Membre;
-import orm.MainOrm;
-import orm.MembreOrm;
+//import orm.MainOrm;
 
 public class Main 
 {
 	public static void main(String[] args) 
 	{
 		//MainOrm myOrm = new MainOrm();
-		MembreOrm m = new MembreOrm();
+		/*MembreOrm m = new MembreOrm();
 		Membre membre = new Membre();
 		membre.setNom("ssss");
-		m.ajouterMembre(membre);
+		m.ajouterMembre(membre);*/
+		/*CommentaireOrm cOrm = new CommentaireOrm();
+		Commentaire c = new Commentaire();
+		cOrm.ajouterCommentaire(c);*/
 		//MyDao.aimerCommentaire(commentaire1);
 	}
 }

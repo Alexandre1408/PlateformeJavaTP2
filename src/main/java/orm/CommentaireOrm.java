@@ -12,11 +12,12 @@ public class CommentaireOrm  extends MainOrm
 	
 	public CommentaireOrm()
 	{
-		
+		super();
 	}
 
 	public void ajouterCommentaire(Commentaire commentaireAjouter) 
 	{
+		System.out.println(commentaireAjouter.getText());
 		try
 		{
 			em.getTransaction().begin();
@@ -77,4 +78,22 @@ public class CommentaireOrm  extends MainOrm
 		}
 		return resultList;
 	}
+	
+	@SuppressWarnings("unchecked")
+    public List<Commentaire> trouverTousCommentaire() 
+    {
+        String selectJPQL = "SELECT c FROM Commentaire c ORDER BY c.date DESC";
+        List<Commentaire> resultList = null;
+        Query query = em.createQuery(selectJPQL);
+        
+        try
+        {
+            resultList = (List<Commentaire>)query.getResultList();
+        }
+        catch(PersistenceException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return resultList;
+    }
 }

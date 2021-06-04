@@ -1,0 +1,112 @@
+@charset "ISO-8859-1";
+
+body
+{
+	background-color:#292D33;
+	font-family:Arial;
+}
+
+p em
+{
+    font-weight: bold;
+}
+
+.leftparagimg
+{
+	margin-left: 7em;
+	color:white;
+}
+
+.centerparagimg
+{
+	margin-left: 8em;
+	color:white;
+}
+
+.button
+{
+	margin:0 auto;
+	text-align:center;
+	width: 100%;
+}
+
+
+.rightparagimg
+{
+	margin-left: 9em;
+	color:white;
+}
+
+
+.titlecenter
+{
+	text-align:center;
+	color:white;
+}
+
+
+h1 span span
+{
+	color:rgb(255, 89, 0);
+}
+
+
+tr:hover
+{
+	background-color:orange;
+
+}
+
+thead,th,tr
+{
+	color:white;
+}
+
+p
+{
+	font-size:1.3em;
+	color:white;
+	margin-left: 40px;
+  	text-align: justify;
+ 	margin-right: 40px;
+}
+
+.titleft
+{
+	color:white;
+	margin-left: 40px;
+}
+
+hr.new5 
+{
+	border: 2px solid white;
+	width:40%;
+	margin:0 auto;
+}
+
+
+
+
+h1 
+{
+	text-transform:uppercase;
+	font-size: 2rem;
+	line-height: 3rem;
+	color:white;
+}
+
+.intro
+{
+	text-align:center;
+	font-size: 1.5em;
+	color:white;
+}
+
+
+.imgcenter
+{
+	text-align:center;
+	color:white;
+}
+
+

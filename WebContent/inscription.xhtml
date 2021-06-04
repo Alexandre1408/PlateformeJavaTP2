@@ -1,24 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <f:view xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
 
-	<h:head>
-	</h:head>
+    <h:head>
+    	<title>Inscription d'un nouveau membre</title>
+    	<br></br>
+    </h:head>
 
-	<h:body>
+    <h:body style="background-color:#292D33;">
+		<div>
+			<h:graphicImage value="./images/bannerV2.PNG" alt="stadium icon"
+				width="100%" height="241" />
+		</div>
 
-		<h:form id="form">
+		<h1 style="color:white;font-family:Arial;margin-left: 40px">Rejoignez la Gaming Academy !</h1>
+    	
+		<p style="color:white;font-family:Arial;margin-left: 40px;font-size:1.3em;">
+			Devenez un nouveau membre de la Gaming Academy <em>gratuitement</em>
+			et accédez à tous nos coachings et bien plus !
+		</p>		
+		
+		<div class="card">
+			<p:messages id="messages" showDetail="true" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			
+			<h:form>
+            
+                <h5 style="color:white;font-family:Arial;margin-left: 40px;font-size:1.0em;">Entrez votre nom</h5>
+                <span class="ui-float-label">
+                	<p:inputText style="margin-left: 40px;" id="nom" value="#{inscriptionBeans.membre.nom}" validator="#{inscriptionBeans.validateNom}"/>
+                </span>
+                
+                <h5 style="color:white;font-family:Arial;margin-left: 40px;font-size:1.0em;">Entrez votre prénom</h5>
+                <span class="ui-float-label">
+                	<p:inputText style="margin-left: 40px;" id="prenom" value="#{inscriptionBeans.membre.prenom}" validator="#{inscriptionBeans.validatePrenom}"/> 
+                </span>
+                
+                <h5 style="color:white;font-family:Arial;margin-left: 40px;font-size:1.0em;">Entrez votre adresse e-mail</h5>
+                <span class="ui-float-label">
+                    <p:inputText style="margin-left: 40px;" id="mail" value="#{inscriptionBeans.membre.mail}" validator="#{inscriptionBeans.validateEmail}"/>
+                </span>
+                   
+                <h5 style="color:white;font-family:Arial;margin-left: 40px;font-size:1.0em;">Entrez votre mot de passe</h5>
+	            <div class="p-col">
+	                <p:password style="margin-left: 40px;" id="pwd1" value="#{inscriptionBeans.membre.motDePasse}" match="pwd2" label="Password 1" required="true" validator="#{inscriptionBeans.validatePassword}"/>
+	            </div>
+	       
+	            <h5 style="color:white;font-family:Arial;margin-left: 40px;font-size:1.0em;">Confirmez votre mot de passe</h5>
+	            <div class="p-col">
+	                <p:password style="margin-left: 40px;" id="pwd2" value="#{inscriptionBeans.membre.motDePasse}" label="Password 2" required="true"/>
+	            </div>
 
-			<p:commandButton value="PrimeFaces Button" />
-			<hr />
-			<h:commandButton value="JSF Button" />
-
-		</h:form>
-
-	</h:body>
+                <br></br>
+                <br></br>
+                <p:commandButton style="margin-left: 40px;" value="Inscription" action="#{inscriptionBeans.inscription}" icon="pi pi-check"/>
+           	</h:form>
+           	
+           		<br></br>
+				<h:form>
+					<p:commandButton style="margin-left: 40px;"
+						alt="revenir page accueil" value="Revenir sur la page d'accueil"
+						action="description?faces-redirect=true"/>
+				</h:form>
+		</div>
+    </h:body>
 
 </f:view>

@@ -63,5 +63,23 @@ public class MembreOrm extends MainOrm {
 		}
 		return resultList;
 	}
+
+    @SuppressWarnings("unchecked")
+    public boolean mailDejaUtilise(String mail) 
+    {
+        String selectJPQL = "SELECT m FROM Membre m WHERE m.mail=:mail";
+        List<Membre> resultList = null;
+        Query query = em.createQuery(selectJPQL);
+        query.setParameter("mail", mail);
+        try
+        {
+            resultList = (List<Membre>)query.getResultList();
+        }
+        catch(PersistenceException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return resultList.isEmpty();
+    }
 	
 }

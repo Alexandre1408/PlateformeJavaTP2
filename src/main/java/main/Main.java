@@ -1,11 +1,6 @@
 package main;
 
-
-import entities.Commentaire;
-import entities.Membre;
-import orm.CommentaireOrm;
-import orm.MainOrm;
-import orm.MembreOrm;
+//import orm.MainOrm;
 
 public class Main 
 {
@@ -16,9 +11,9 @@ public class Main
 		Membre membre = new Membre();
 		membre.setNom("ssss");
 		m.ajouterMembre(membre);*/
-		CommentaireOrm cOrm = new CommentaireOrm();
+		/*CommentaireOrm cOrm = new CommentaireOrm();
 		Commentaire c = new Commentaire();
-		cOrm.ajouterCommentaire(c);
+		cOrm.ajouterCommentaire(c);*/
 		//MyDao.aimerCommentaire(commentaire1);
 	}
 }

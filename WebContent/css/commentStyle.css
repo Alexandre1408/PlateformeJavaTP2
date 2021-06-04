@@ -1,0 +1,128 @@
+@charset "ISO-8859-1";
+
+body
+{
+	margin-left:40px;
+    background-color:rgb(41, 45, 51);
+    font-family:Arial;
+}
+
+h1, h2 
+{
+	color:white;
+}
+
+hr
+{
+    border: 2px solid white;
+    width:40%;
+    margin-top: 40px;
+    margin-bottom:40px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+li
+{
+	margin-top:12px;
+	margin-left:-40px;
+}
+
+.commenttext
+{
+	font-size:16px;
+	color:white;
+}
+
+.commenttime
+{
+	font-size:12px;
+	color:#a7a7a7;
+	margin-right:10px;
+}
+
+.commentlikes
+{
+	font-size:12px;
+	color:#a7a7a7;
+}
+
+.commentbutton
+{
+	cursor: pointer;
+    background-color:rgb(41, 45, 51);
+    color:#a7a7a7;
+    border: none;
+    width: 60px;
+    height: 20px;
+	margin-right:2px;
+}
+
+.commentbutton:hover
+{
+	color:#787878;
+	outline: none;
+}
+
+.commentpagebundle
+{
+	margin-left:45%;
+}
+
+.commentchangepage
+{
+	cursor: pointer;
+    background-color:rgb(41, 45, 51);
+    color:#a7a7a7;
+    border: none;
+    width: 60px;
+    height: 20px;
+	margin-right:2px;
+}
+
+.commentchangepage:hover
+{
+	color:#787878;
+	outline: none;
+}
+
+.commentpage
+{
+	color:white;
+}
+
+.commentinput
+{
+	font-size:16px;
+	margin-top:10px;
+	width:300px;
+	height:30px;
+	background-color:rgb(41, 45, 51);
+	color:white;
+	outline: 0;
+	border-width: 0 0 1px;
+	border-color: #a7a7a7;
+}
+
+.commentsubmit
+{
+	border-radius: 4px;
+	width:170px;
+	height:30px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:none;
+    background-color:#6f6f6f;
+    color:white;
+    font-weight:bold;
+}
+
+.commentsubmit:hover
+{
+	border:none;
+	background-color:#535353;
+	outline: none;
+}

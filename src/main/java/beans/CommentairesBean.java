@@ -11,6 +11,12 @@ import javax.inject.Named;
 import entities.Commentaire;
 import orm.CommentaireOrm;
 
+/***
+ * Classe Beans pour les commentaires et top commentaires
+ *  
+ * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
+ *
+ */
 @Named
 @RequestScoped
 public class CommentairesBean implements Serializable {

@@ -18,7 +18,7 @@ public class MainOrm
     protected EntityManagerFactory emf;
 
     /**
-     * constructeur qui génère l'entity manager
+     * @brief Constructeur qui génère l'entity manager
      */
     public MainOrm() 
     {
@@ -27,7 +27,7 @@ public class MainOrm
     }
 
     /**
-     * getter de l'attribut entity manager
+     * @brief getter de l'attribut entity manager
      * @return em
      */
     public EntityManager getEm() 

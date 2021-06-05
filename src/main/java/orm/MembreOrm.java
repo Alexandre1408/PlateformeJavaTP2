@@ -7,6 +7,12 @@ import javax.persistence.Query;
 
 import entities.Membre;
 
+/***
+ * Classe CommentaireOrm qui est gère les interactions entre la classe commentaires et la base données
+ * Herite de MainOrm
+ * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
+ *
+ */
 public class MembreOrm extends MainOrm {
 
 	public MembreOrm()
@@ -14,6 +20,10 @@ public class MembreOrm extends MainOrm {
 		super();
 	}
 	
+	/**
+	* Ajoute le membre passée en paramètre dans la base de données
+	* @param membreAjouter à ajouter dans la base de données
+	*/
 	public void ajouterMembre(Membre membreAjouter) 
 	{
 		try
@@ -29,7 +39,10 @@ public class MembreOrm extends MainOrm {
 		}		
 	}
 	
-	
+	/**
+	* Ajoute le membre passée en paramètre dans la base de données
+	* @param membreASupprimer à ajouter dans la base de données
+	*/
 	public void supprimerMembre(Membre membreASupprimer) 
 	{
 		try
@@ -45,7 +58,10 @@ public class MembreOrm extends MainOrm {
 		}		
 	}
 
-	
+	/**
+	 * Renvoie une liste de tous les membres de la base de données
+	 * @return la liste des membres renvoyés
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Membre> trouverTousLesMembres() 
 	{
@@ -64,6 +80,11 @@ public class MembreOrm extends MainOrm {
 		return resultList;
 	}
 
+	/**
+	* Renvoie si le mail passée en paramètre est déjà dans la base de données
+	* @param mail
+	* @return true si le mail est trouvé dans la bdd, false sinon
+	*/
     @SuppressWarnings("unchecked")
     public boolean mailDejaUtilise(String mail) 
     {
@@ -80,6 +101,5 @@ public class MembreOrm extends MainOrm {
             System.out.println(e.getMessage());
         }
         return resultList.isEmpty();
-    }
-	
+    }	
 }

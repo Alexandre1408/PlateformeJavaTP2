@@ -3,7 +3,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+		xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>GamingAcademy</title>
@@ -22,6 +22,7 @@
 <h:body>
 
 	<div>
+		<p:scrollTop />
 		<h1 class="text-center">
 			<span> <span>élevez vous.<br></br></span> Améliorez-vous grâce
 				à Gaming Academy et devenez<br></br> un pro de l'esport
@@ -225,14 +226,26 @@
 	<br></br>
 
 	<h:form>
-		<div class="button">
-			<p:commandButton value="Devenez membre"
-				icon="pi pi-check" alt="s'inscrire" action="inscription?faces-redirect=true" />
+		<div class="form-group center" style="text-align: center;">
+			<p:commandButton value="Devenez membre" icon="pi pi-check"
+				alt="s'inscrire" action="inscription?faces-redirect=true" />
 		</div>
 	</h:form>
 
-	
-		<br></br>
-		<br></br>
+	<br></br>
+
+	<h2 class="titleft">Laissez nous un commentaire !</h2>
+
+	<p>Vous avez des questions ou vous voulez tout simplement nous
+		faire un retour, alors n'hésitez pas à nous laisser un commentaire</p>
+
+	<div style="text-align: center;">
+		<p:commandButton value="Laissez nous un commentaire" alt="commentaire"
+			action="commentaires?faces-redirect=true" />
+	</div>
+
+	<br></br>
+	<br></br>
+
 </h:body>
 </html>

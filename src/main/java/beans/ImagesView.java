@@ -9,25 +9,26 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
- * Classe utilisée pour afficher les images du contentFlow (les joueurs formés par nous-même)
+ * Classe utilisÃ©e pour afficher les images du contentFlow (les joueurs formÃ©s par nous-mÃªme)
  * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
  */
 @Named
 @RequestScoped
 public class ImagesView implements Serializable
 {
+
     /**
-     * Utilisé car la classe implement serializable
+     * UtilisÃ© car la classe implement serializable
      */
     private static final long serialVersionUID = 1L;
     
     /**
-     * Liste des images qui seront affichées dans le contentFlow
+     * Liste des images qui seront affichÃ©es dans le contentFlow
      */
     private List<String> images;
     
     /**
-     * Initialise les données de la liste
+     * Initialise les donnÃ©es de la liste
      */
     @PostConstruct
     public void init()
@@ -41,8 +42,8 @@ public class ImagesView implements Serializable
     }
     
     /**
-     * Getter de la liste des noms des images à afficher
-     * @return la liste des noms des images à afficher
+     * Getter de la liste des noms des images Ã  afficher
+     * @return la liste des noms des images Ã  afficher
      */
     public List<String> getImages()
     {

@@ -6,13 +6,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 
-/**
- * \brief 
- * @version 1.0
+/***
+ * Classe mère MainOrm qui contient les EntityManger et la factory
+ *  
+ * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
+ *
  */
 public class MainOrm 
 {
-    
     protected EntityManager em;
     protected EntityManagerFactory emf;
 

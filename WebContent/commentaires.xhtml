@@ -2,18 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core" 
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
     <h:head>
     	<f:facet name="last">
                 <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/commentStyle.css" />
          </f:facet>
-        <title>Premier exemple JSF 2.0</title>
+        <title>Commentaires</title>
     </h:head>
     <h:body>
     
     	<h1>Espace Commentaires</h1>
     	    	
-    	<h2>Top commentaires</h2>
+    	<h2>Les commentaires les plus aimés !</h2>
     	
     	<ul>
 		    <ui:repeat value="#{commentairesBean.topComments}" var="comment">
@@ -46,9 +48,16 @@
     		<h:outputText value="#{commentairesBean.curPag}" styleClass="commentpage"/>
     		<h:commandButton value="- next" action="#{commentairesBean.nextPage}" styleClass="commentchangepage"/>
     	</h:form>
-    	<h:form>
-    	   <h:inputText value="#{commentairesBean.tempText}" styleClass="commentinput"/><br/>
-    	   <h:commandButton value="Publier commentaire" action="#{commentairesBean.addComment}" styleClass="commentsubmit" />
-    	</h:form>
-    </h:body>
+
+	<h:form>
+		<div>
+			<h:inputText value="#{commentairesBean.tempText}" styleClass="commentinput" /> <br />
+			<h:commandButton value="Publier commentaire" action="#{commentairesBean.addComment}" styleClass="commentsubmit" />
+		</div>
+		<p:commandButton value="Revenez sur la page d'accueil" alt="accueil" action="description"/>
+	</h:form>
+</h:body>
 </html>
+
+
+

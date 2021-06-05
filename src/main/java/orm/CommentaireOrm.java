@@ -7,17 +7,28 @@ import javax.persistence.Query;
 
 import entities.Commentaire;
 
+/***
+ * Classe CommentaireOrm qui est gère les interactions entre la classe commentaires et la base données
+ * Herite de MainOrm
+ * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
+ *
+ */
 public class CommentaireOrm  extends MainOrm
 {
-	
+	/**
+	* @brief constructeur de CommentaireOrm
+	*/
 	public CommentaireOrm()
 	{
 		super();
 	}
 
+	/**
+	 * Ajoute le commentaire passée en paramètre dans la base de données
+	 * @param commentaireAjouter le commentaire à ajouter
+	 */
 	public void ajouterCommentaire(Commentaire commentaireAjouter) 
 	{
-		System.out.println(commentaireAjouter.getText());
 		try
 		{
 			em.getTransaction().begin();
@@ -31,6 +42,10 @@ public class CommentaireOrm  extends MainOrm
 		}		
 	}
 	
+	/**
+	* @brief Ajoute le commentaire passée en paramètre dans la base de données
+	* @param commentaireASupprimer le commentaire à supprimer
+	*/
 	public void supprimerCommentaire(Commentaire commentaireASupprimer) 
 	{
 		try
@@ -46,6 +61,10 @@ public class CommentaireOrm  extends MainOrm
 		}		
 	}
 	
+	/***
+	* @brief augmente le nombre de j'aime du commentaire passée en paramètre dans la base de données
+	* @param commentaireAimer le commentaire à aimer
+	*/
 	public void aimerCommentaire(Commentaire commentaireAimer) 
 	{
 		try
@@ -61,6 +80,11 @@ public class CommentaireOrm  extends MainOrm
 		}		
 	}
 	
+	/**
+	 * @brief Renvoie le nombre de commentaires passée en paramètre
+	 * @param limit le nombre de commentaires renvoyés
+	 * @return La liste des commentaires renvoyés
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Commentaire> trouverTopCommentaireLimiter(int limit) 
 	{
@@ -79,6 +103,11 @@ public class CommentaireOrm  extends MainOrm
 		return resultList;
 	}
 	
+	/**
+	 * @brief Renvoie tous les commentaires
+	 * @param limit, le nombre de commentaires renvoyés
+	 * @return La liste des commentaires renvoyés
+	 */
 	@SuppressWarnings("unchecked")
     public List<Commentaire> trouverTousCommentaire() 
     {

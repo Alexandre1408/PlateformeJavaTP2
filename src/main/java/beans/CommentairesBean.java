@@ -23,17 +23,25 @@ public class CommentairesBean implements Serializable {
 
 	private static final long serialVersionUID = 3199686126907808648L;
 
+	//Variable représentant le numéro de la page commentaire ouverte
 	private static int currentPage = 1;
 
+	//Lien avec la base de données
 	private CommentaireOrm orm;
+	//Liste des top commentaires
 	private List<Commentaire> topComments;
+	//Liste des commentaires pour la page
 	private List<Commentaire> comments;
+	//Liste des commentaires
 	private List<Commentaire> allComments;
-	
+
+	//Variable représentant le numéro de la page commentaire ouverte
 	private int curPag;
 	
+	//Contenu du commentaire a publier
 	private String tempText;
     
+	
     @PostConstruct
     public void init()
     {
@@ -42,6 +50,9 @@ public class CommentairesBean implements Serializable {
 		updateComments();
     }
 	
+    /**
+     * @brief met à jour tous les tableaux de commentaire
+     */
 	public void updateComments()
 	{
 	
@@ -50,6 +61,9 @@ public class CommentairesBean implements Serializable {
 		initPageComments();
 	}
 	
+	/**
+	 * @brief met à jour les commentaires en fonction de la page ouverte
+	 */
 	public void initPageComments()
 	{
 		if(allComments != null)
@@ -64,6 +78,10 @@ public class CommentairesBean implements Serializable {
 
 	}
 	
+	/**
+	 * @brief aime un commentaire
+	 * @param id id du commentaire a aimer
+	 */
 	public void likeComment(int id)
 	{
 		for(int ind = 0; ind < allComments.size(); ind++)
@@ -74,6 +92,9 @@ public class CommentairesBean implements Serializable {
 		}
 	}
 	
+	/**
+	 * @brief ajout d'un commentaire
+	 */
 	public void addComment()
 	{
 		if(tempText != null && tempText != "" && !tempText.isEmpty())
@@ -85,6 +106,9 @@ public class CommentairesBean implements Serializable {
 		}
 	}
 	
+	/**
+	 * @brief va à la prochaine page de commentaires
+	 */
 	public void nextPage()
 	{
 		if(allComments != null)
@@ -99,6 +123,9 @@ public class CommentairesBean implements Serializable {
 
 	}
 	
+	/**
+	 * @brief va à la page de commentaires précédente
+	 */
 	public void previousPage()
 	{
 		if(curPag > 1)

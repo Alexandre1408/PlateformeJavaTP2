@@ -1,6 +1,8 @@
 package main;
 
-//import orm.MainOrm;
+import entities.Membre;
+import orm.MainOrm;
+import orm.MembreOrm;
 
 /**
  * Classe utilisée pour la création de la base données uniquement

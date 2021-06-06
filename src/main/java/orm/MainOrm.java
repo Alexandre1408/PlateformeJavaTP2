@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 
 /***
- * Classe mère MainOrm qui contient les EntityManger et la factory
+ * Classe mère MainOrm qui contient les EntityManager et la factory
  *  
  * @author BELDA Tom, INGARAO Adrien, MAGGOUH Naoufal, UNG Alexandre
  *

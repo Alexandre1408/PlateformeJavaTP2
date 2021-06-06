@@ -33,7 +33,7 @@ p em
 
 .rightparagimg
 {
-	margin-left: 9em;
+	margin-left: 8em;
 	color:white;
 }
 
@@ -84,9 +84,6 @@ hr.new5
 	margin:0 auto;
 }
 
-
-
-
 h1 
 {
 	text-transform:uppercase;
@@ -109,4 +106,22 @@ h1
 	color:white;
 }
 
+.ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell
+{
+    text-align: center;
+}
 
+.customPanelGrid .ui-panelgrid-content
+{
+    align-items: center;
+}
+
+.ui-panelgrid td
+{
+    background-color:#292D33;
+}
+
+.panelRow
+{
+	color:white;
+}
